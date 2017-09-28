@@ -8,10 +8,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const hbs = require('hbs');
 
-// Sets up the Express App
+// Sets up the Express App to be used with socket.io
 // =============================================================
 var app = express();
 const PORT = process.env.PORT || 8080;
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
 
 // Sets up the Express app to use hbs for the view engine
 app.set('view engine', 'hbs');
@@ -35,6 +37,6 @@ require('./app/routes/html-routes.js')(app);
 
 // Starts the server to begin listening
 // =============================================================
-app.listen(PORT, function() {
+server.listen(PORT, function() {
   console.log('App listening on PORT ' + PORT);
 });
