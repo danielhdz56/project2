@@ -1,0 +1,26 @@
+{
+  "name": "project2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielhdz56/project2.git"
+  },
+  "author": "Daniel, David, Grant",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielhdz56/project2/issues"
+  },
+  "homepage": "https://github.com/danielhdz56/project2#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.15.5",
+    "hbs": "^4.0.1",
+    "path": "^0.12.7",
+    "sequelize": "^4.11.1"
+  }
+}
