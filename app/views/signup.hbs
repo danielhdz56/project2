@@ -1,0 +1,31 @@
+{{!-- TODO: Add css grid styling --}}
+<!DOCTYPE html>
+<html lang="en">
+  {{> head}}
+<body>
+  <h1>Signup Page Works!</h1>
+
+  <form>
+      <label for="username">Username</label>
+      <input type="text" placeholder="username">
+
+      <label for="email">Email</label>
+      <input type="text" placeholder="email">
+  
+      <label for="password">Password</label>
+      <input type="password" placeholder="password">
+
+      <label for="passwordAgain">Retype Password</label>
+      <input type="password" placeholder="password">
+
+      <label for="first_name">First Name</label>
+      <input type="text" placeholder="First Name">
+
+      <label for="last_name">Last Name</label>
+      <input type="text" placeholder="First Name">
+  </form>
+  <button type="button" id="btn-signup">Signup</button>
+  {{!-- TODO: Add form validation --}}
+  {{> scripts}}
+</body>
+</html>

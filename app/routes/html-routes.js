@@ -24,4 +24,10 @@ module.exports = function(app) {
       pageTitle: 'Login Page'
     });
   });
+  // loads signup.hbs
+  app.get("/signup", function(req, res) {
+    res.render(path.join(__dirname, "../views/signup.hbs"), {
+      pageTitle: 'Signup Page'
+    });
+  });
 };
