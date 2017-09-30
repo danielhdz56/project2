@@ -12,11 +12,16 @@ module.exports = function(app) {
 
   // Each of the below routes just handles the HTML page that the user gets sent to.
   
-  // index route loads view.html
+  // loads home.hbs
   app.get("/", function(req, res) {
     res.render(path.join(__dirname, "../views/home.hbs"), {
-      pageTitle: 'Home Page',
-      welcomeMessage: 'Handlebars are awesome'
+      pageTitle: 'Home Page'
+    });
+  });
+  // loads login.hbs
+  app.get("/login", function(req, res) {
+    res.render(path.join(__dirname, "../views/login.hbs"), {
+      pageTitle: 'Login Page'
     });
   });
 };
