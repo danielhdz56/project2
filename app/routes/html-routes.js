@@ -11,7 +11,7 @@ const path = require("path");
 module.exports = function(app) {
 
   // Each of the below routes just handles the HTML page that the user gets sent to.
-  
+
   // loads home.hbs
   app.get("/", function(req, res) {
     res.render(path.join(__dirname, "../views/home.hbs"), {
@@ -23,5 +23,13 @@ module.exports = function(app) {
     res.render(path.join(__dirname, "../views/login.hbs"), {
       pageTitle: 'Login Page'
     });
+  });
+
+  app.get("/vue", function(req, res) {
+    const data = {
+      text: "The vue page works!"
+    };
+
+    res.renderVue("test", data);
   });
 };
