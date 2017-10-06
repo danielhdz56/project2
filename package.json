@@ -20,7 +20,6 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.1",
     "express-vue": "^4.0.13",
-    "hbs": "^4.0.1",
     "mysql2": "^1.4.2",
     "path": "^0.12.7",
     "sequelize": "^4.11.5",
