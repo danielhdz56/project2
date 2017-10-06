@@ -6,7 +6,6 @@
 // =============================================================
 const express = require('express');
 const bodyParser = require('body-parser');
-const hbs = require('hbs');
 const expressVue = require("express-vue");
 const path = require("path");
 
@@ -28,10 +27,6 @@ const vueOptions = {
 
 const expressVueMiddleware = expressVue.init(vueOptions);
 app.use(expressVueMiddleware);
-
-// Sets up the Express app to use hbs for the view engine
-app.set('view engine', 'hbs');
-hbs.registerPartials('app/views/partials');
 
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
