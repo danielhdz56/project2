@@ -6,7 +6,8 @@
 // =============================================================
 const express = require('express');
 const bodyParser = require('body-parser');
-const hbs = require('hbs');
+const expressVue = require("express-vue");
+const path = require("path");
 
 // Sets up the Express App to be used with socket.io
 // =============================================================
@@ -15,9 +16,17 @@ const PORT = process.env.PORT || 8080;
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
-// Sets up the Express app to use hbs for the view engine
-app.set('view engine', 'hbs');
-hbs.registerPartials('app/views/partials');
+//set up vue middlware
+const vueOptions = {
+  rootPath: path.join(__dirname, "app/views"),
+  layout: {
+    start: "<div id=app>",
+    end: "</div>"
+  }
+}
+
+const expressVueMiddleware = expressVue.init(vueOptions);
+app.use(expressVueMiddleware);
 
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
@@ -38,5 +47,5 @@ require('./app/routes/html-routes.js')(app);
 // Starts the server to begin listening
 // =============================================================
 server.listen(PORT, function() {
-  console.log('App listening on PORT ' + PORT);
+  console.log(`Server started on http://localhost:${PORT}`);
 });
