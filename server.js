@@ -52,5 +52,5 @@ require('./app/routes/html-routes.js')(app);
 // Starts the server to begin listening
 // =============================================================
 server.listen(PORT, function() {
-  console.log('App listening on PORT ' + PORT);
+  console.log(`Server started on http://localhost:${PORT}`);
 });
