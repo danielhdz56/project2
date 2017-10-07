@@ -23,7 +23,7 @@ const vueOptions = {
     start: "<div id=app>",
     end: "</div>"
   }
-}
+};
 
 const expressVueMiddleware = expressVue.init(vueOptions);
 app.use(expressVueMiddleware);
