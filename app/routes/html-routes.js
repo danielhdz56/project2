@@ -5,6 +5,18 @@
 // Dependencies
 // =============================================================
 const path = require("path");
+const vue = {
+  head: {
+    title: 'Hello',
+    meta: [{
+        script: 'https://unpkg.com/vue@2.4.2/dist/vue.js'
+    }, {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+    }
+    ],
+  }
+};
 
 // Routes
 // =============================================================
@@ -17,6 +29,6 @@ module.exports = function(app) {
       text: "The vue page works!"
     };
 
-    res.renderVue("test", data);
+    res.renderVue("test", data, vue);
   });
 };
