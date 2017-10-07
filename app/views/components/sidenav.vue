@@ -1,20 +1,48 @@
 <template lang="html">
   <div id="sidenav"> 
     <h3 class="sidenav-heading">Menu</h3>
-    <a href="#" class="sidenav-link">Grades</a>
-    <a href="#" class="sidenav-link">Attendance</a>
-    <a href="#" class="sidenav-link">Homework</a>
-    <a href="#" class="sidenav-link">Messages</a>
-    <a href="#" class="sidenav-link">Roster</a>    
-    <a href="#" class="sidenav-link">Settings</a>
+    <ul>
+      <li v-for="link in links">
+        <a :href="link.href" :class="link.classes">{{link.name}}</a>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
 export default {
-    data: function() {
-        return {
-        }
+  data: function () {
+    return {
+      links: [{
+        href: '#',
+        classes: 'sidenav-link',
+        name: 'Grades'
+      }, {
+        href: '#',
+        classes: 'sidenav-link',
+        name: 'Attendance'
+
+      }, {
+        href: '#',
+        classes: 'sidenav-link',
+        name: 'Homework'
+
+      }, {
+        href: '#',
+        classes: 'sidenav-link',
+        name: 'Messages'
+
+      }, {
+        href: '#',
+        classes: 'sidenav-link',
+        name: 'Roster'
+
+      }, {
+        href: '#',
+        classes: 'sidenav-link',
+        name: 'Settings'
+      }]
     }
+  }
 }
 </script>
