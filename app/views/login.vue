@@ -1,7 +1,7 @@
 <template>
     <div>
         Hello
-        <nav-component></nav-component>
+        <navbar></navbar>
     </div>
 </template>
 
@@ -9,7 +9,7 @@
 // const path = require("path");
 // import nav from path.join(__dirname, "components/navbar");
 
-import nav from "./components/navbar";
+import navbar from "./components/navbar.vue";
 
 export default {
     data() {
@@ -17,7 +17,7 @@ export default {
         }
     },
     components: {
-        navComponent: nav
+        navbar: navbar
     }
 }
 </script>
