@@ -31,4 +31,12 @@ module.exports = function(app) {
 
     res.renderVue("test", data, vue);
   });
+
+  app.get("/signup", function(req, res) {
+    const data = {
+      text: "The signup vue page works!"
+    };
+
+    res.renderVue("signup", data, vue);
+  });
 };
