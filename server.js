@@ -12,7 +12,7 @@ const path = require("path");
 // Sets up the Express App to be used with socket.io
 // =============================================================
 var app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 

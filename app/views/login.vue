@@ -1,19 +1,25 @@
 <template>
     <div>
-        <h1>{{text}}</h1>
-        <sidenav></sidenav>
+        <navbar></navbar>
     </div>
 </template>
 
 <script>
-import sidenav from './components/sidenav.vue';
+import navbar from "./components/navbar.vue";
+
 export default {
-    data: function() {
+    data() {
+
         return {
         }
     },
     components: {
-        sidenav: sidenav
+        navbar: navbar
     }
 }
 </script>
+
+<style>
+
+</style>
+
