@@ -7,6 +7,7 @@
 
 <script>
 import sidenav from './components/sidenav.vue';
+
 export default {
     data: function() {
         return {
@@ -17,4 +18,3 @@ export default {
     }
 }
 </script>
-
