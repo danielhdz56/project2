@@ -1,20 +1,22 @@
 <template>
     <div>
         <navbar></navbar>
+        <login-form></login-form>
     </div>
 </template>
 
 <script>
 import navbar from "./components/navbar.vue";
+import loginForm from "./components/loginForm.vue";
 
 export default {
     data() {
-
         return {
         }
     },
     components: {
-        navbar: navbar
+        navbar: navbar,
+        loginForm: loginForm
     }
 }
 </script>
