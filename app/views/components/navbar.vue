@@ -14,15 +14,15 @@ export default {
         return {
             options: [
                 {
-                    href: '#',
+                    href: '/',
                     name: 'Home'
                 },
                 {
-                    href: '#',
+                    href: 'login',
                     name: 'Login'
                 },
                 {
-                    href: '#',
+                    href: 'signup',
                     name: 'Signup'
                 }]
         }
