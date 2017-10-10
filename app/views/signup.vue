@@ -1,19 +1,22 @@
 <template>
     <div>
-        <h1>{{text}}</h1>
-        <sidenav></sidenav>
+         <navbar></navbar>
+         <signup-form></signup-form>
     </div>
 </template>
 
 <script>
-import sidenav from './components/sidenav.vue';
+import navbar from "./components/navbar.vue";
+import signupForm from "./components/signupForm.vue";
+
 export default {
-    data: function() {
+    data() {
         return {
         }
     },
     components: {
-        sidenav: sidenav
+        navbar: navbar,
+        signupForm: signupForm
     }
 }
 </script>
