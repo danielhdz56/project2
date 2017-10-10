@@ -1,6 +1,6 @@
 <template>
     <ul>
-        <li :key="option" v-for="option in options">
+        <li v-for="option in options">
             <a :href="option.href" class="nav-link">{{option.name}}</a>
         </li>
     </ul>
