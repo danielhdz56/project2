@@ -3,53 +3,65 @@ DROP DATABASE IF EXISTS chalkboardplus_db;
 CREATE DATABASE chalkboardplus_db;
 USE chalkboardplus_db;
 
-CREATE TABLE students
+CREATE TABLE user
 (
-	id INT(11) NOT NULL AUTO_INCREMENT,
-	s_fname VARCHAR(255) NOT NULL,
-    s_lname VARCHAR(255) NOT NULL,
-    s_sex VARCHAR(255) NOT NULL,
-    GPA DECIMAL(5,2) NOT NULL,
-    s_cohort INT(11) NOT NULL,
-    s_add VARCHAR(255) NOT NULL,
-    s_email VARCHAR(255) NOT NULL,
-    s_password VARCHAR(255) NOT NULL,
-    s_photo VARCHAR(255),
+	id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	firstname VARCHAR(255) NOT NULL,
+    lastname VARCHAR(255) NOT NULL,
+    sex VARCHAR(255) NOT NULL,
+    assignment VARCHAR(255) NOT NULL,
+    dailygrade VARCHAR(255) NOT NULL,
+    quizgrade VARCHAR(255) NOT NULL,
+    testgrade VARCHAR(255) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    photo VARCHAR(255),
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE teachers
+CREATE TABLE groups
 (
-	id INT(11) NOT NULL AUTO_INCREMENT,
-	t_fname VARCHAR(255) NOT NULL,
-    t_lname VARCHAR(255) NOT NULL,
-    t_sex VARCHAR(255) NOT NULL,
-    t_subj VARCHAR(255) NOT NULL,
-    t_dept VARCHAR(255) NOT NULL,
-    t_cohort INT(11) NOT NULL,
-    t_add VARCHAR(255) NOT NULL,
-    t_email VARCHAR(255) NOT NULL,
-    t_password VARCHAR(255) NOT NULL,
-    t_photo VARCHAR(255),
-	PRIMARY KEY (id)
+	id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+    user_id INT(11) UNSIGNED NOT NULL,
+	short_slug VARCHAR(255) NOT NULL,
+    description VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE stupost
 (
-	id INT(11) NOT NULL AUTO_INCREMENT,
+	id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 	s_id INT(11) NOT NULL,
     s_msg VARCHAR(255) NOT NULL,
     s_att VARCHAR(255) NOT NULL,
-	PRIMARY KEY (id),
-    FOREIGN KEY (s_id) REFERENCES students(id)
+	PRIMARY KEY (id)
 );
 
 CREATE TABLE teapost
 (
-	id INT(11) NOT NULL AUTO_INCREMENT,
+	id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 	t_id INT(11) NOT NULL,
     t_mag VARCHAR(255) NOT NULL,
     t_att VARCHAR(255) NOT NULL,
-	PRIMARY KEY (id),
-    FOREIGN KEY (t_id) REFERENCES teachers(id)
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE departments
+(
+	id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	t_id INT(11) NOT NULL,
+    t_mag VARCHAR(255) NOT NULL,
+    t_att VARCHAR(255) NOT NULL,
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE classes
+(
+	id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	class_name INT(11) NOT NULL,
+    description VARCHAR(255) NOT NULL,
+    position VARCHAR(255) NOT NULL,
+    user_id VARCHAR(255) INT,
+    department_id VARCHAR(255) INT
+	PRIMARY KEY (id)
 );
