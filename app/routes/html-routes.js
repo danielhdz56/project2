@@ -32,10 +32,10 @@ module.exports = function(app) {
 
   app.get("/home", function(req, res) {
     const data = {
-      text: "The vue page works!"
+      text: "The Home vue page works!"
     };
 
-    res.renderVue("test", data, vue);
+    res.renderVue("home", data, vue);
   });
 
   app.get("/signup", function(req, res) {
