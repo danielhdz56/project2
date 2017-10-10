@@ -33,7 +33,7 @@ export default {
 <style scoped>
 #grid {
     display: grid;
-    grid-template-columns: 70vw 30vw;
+    grid-template-columns: auto 200px;
     grid-template-areas: ". nav";
     background: #eee;
     padding: 5px 0;
