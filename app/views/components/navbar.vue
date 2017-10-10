@@ -1,6 +1,8 @@
 <template>
     <ul>
-        <li :key="option" v-for="option in options">{{option}}</li>
+        <li :key="option" v-for="option in options">
+            <a :href="option.href" class="nav-link">{{option.name}}</a>
+        </li>
     </ul>
 </template>
 
@@ -9,12 +11,25 @@ export default {
     data() {
         return {
             options: [
-                "Home",
-                "Login",
-                "Sign up"
-            ]
+                {
+                    href: '#',
+                    name: 'Home'
+                },
+                {
+                    href: '#',
+                    name: 'Login'
+                },
+                {
+                    href: '#',
+                    name: 'Signup'
+                }]
         }
     }
 }
 </script>
+
+<style>
+
+</style>
+
 
