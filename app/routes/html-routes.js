@@ -39,4 +39,12 @@ module.exports = function(app) {
 
     res.renderVue("signup", data, vue);
   });
+    
+  app.get("/login", function(req, res) {
+    const data = {
+      text: "The login vue page works!"
+    };
+
+    res.renderVue("login", data, vue);
+  });
 };
