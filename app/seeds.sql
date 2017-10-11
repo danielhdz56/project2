@@ -2,10 +2,10 @@
 
 INSERT INTO students (s_fname,s_lname,s_sex,GPA,s_cohort,s_add,s_email,s_password) 
 VALUES
-('Kevon','Robinson','Male','3.50','2017','2554 Wolf Creek Rd','kr23@hhs.edu','fdgvhgdrst12!','https://i.pinimg.com/originals/8f/57/2d/8f572d3fced9780ce7003ac94bae6e14.jpg'),
-('Erin','Conway','Female','2.95','2017','3100 Shepherd Dr','ec55@hhs.edu','wvhqfqdewqf!','https://i.pinimg.com/736x/4f/69/b4/4f69b4c959027702f8f07ac813c3cdd5--beautiful-eyes-beautiful-women.jpg'),
-('Emily','Landes','Female','3.40','2017','2140 Stonecrest Pkwy','el45@hhs.edu','gwugtw1sf244!','https://farm5.static.flickr.com/4116/4819903224_ce9a6b02f8_b.jpg'),
-('George','Moes','Male','3.63','2017','3550 Enclave Rd','gm99@hhs.edu','A23rqefqasdhai4!','https://i.pinimg.com/736x/8f/58/b5/8f58b536e07872b7b111d214c0c3860f--blonde-guys-blond-male.jpg');
+('Kevon','Robinson','Male','Math','B+','A','A-','2554 Wolf Creek Rd','kr77@hhs.edu','fdgvhgdrst12!','https://i.pinimg.com/originals/8f/57/2d/8f572d3fced9780ce7003ac94bae6e14.jpg'),
+('Erin','Conway','Female','Chemistry','B-','B+','C+','3100 Shepherd Dr','ec55@hhs.edu','wvhqfqdewqf!','https://i.pinimg.com/736x/4f/69/b4/4f69b4c959027702f8f07ac813c3cdd5--beautiful-eyes-beautiful-women.jpg'),
+('Emily','Landes','Female','English','A-','B+','B+','2140 Stonecrest Pkwy','el45@hhs.edu','gwugtw1sf244!','https://farm5.static.flickr.com/4116/4819903224_ce9a6b02f8_b.jpg'),
+('George','Moes','Male','Computer Science','A+','A','A-','3550 Enclave Rd','gm99@hhs.edu','A23rqefqasdhai4!','https://i.pinimg.com/736x/8f/58/b5/8f58b536e07872b7b111d214c0c3860f--blonde-guys-blond-male.jpg');
 
 INSERT INTO teachers (t_fname,t_lname,t_sex,t_subj,t_dept,t_cohort,t_add,t_email,t_password) 
 VALUES
