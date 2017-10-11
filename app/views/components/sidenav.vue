@@ -3,7 +3,7 @@
     <h3 id="header">Menu</h3>
     <ul>
       <li v-for="link in links">
-        <a :href="link.href" :class="link.classes">{{link.name}}</a>
+        <a :href="link.href">{{link.name}}</a>
       </li>
     </ul>
   </div>
@@ -15,31 +15,25 @@ export default {
     return {
       links: [{
         href: '#',
-        classes: 'sidenav-link',
         name: 'Grades'
       }, {
         href: '#',
-        classes: 'sidenav-link',
         name: 'Attendance'
 
       }, {
         href: '#',
-        classes: 'sidenav-link',
         name: 'Homework'
 
       }, {
         href: '#',
-        classes: 'sidenav-link',
         name: 'Messages'
 
       }, {
         href: '#',
-        classes: 'sidenav-link',
         name: 'Roster'
 
       }, {
         href: '#',
-        classes: 'sidenav-link',
         name: 'Settings'
       }]
     }
