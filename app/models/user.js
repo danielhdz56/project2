@@ -7,24 +7,46 @@ var sequelize = require("../config/connection.js");
 
 // Creates a "User" model that matches up with DB
 var User = sequelize.define("user", {
-  first_name: {
+  firstname: {
     type: Sequelize.STRING
   },
-  last_name: {
+  lastname: {
     type: Sequelize.STRING
   },
-  username: {
+  sex: {
+    type: Sequelize.STRING
+  },
+  assignment:{
+    type: Sequelize.STRING
+  },
+  dailygrade:{
+    type: Sequelize.STRING
+  },
+  quizgrade:{
+    type: Sequelize.STRING
+  },
+  testgrade:{
+    type: Sequelize.STRING
+  },
+  address:{
     type: Sequelize.STRING
   },
   email: {
     type: Sequelize.STRING
+  },
+  password:{
+    type:Sequelize.STRING
   }
 }, {
   timestamps: false 
 });
 
+User.belongsToMany(Group, { through: UserGroup });
+
+
+
 // Syncs with DB
-User.sync();
+//User.sync();
 
 // Makes the User Model available for other files (will also create a table)
 module.exports = User;

@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3000;
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
-//set up vue middlware
+//set up vue middleware
 const vueOptions = {
   rootPath: path.join(__dirname, "app/views"),
   layout: {
@@ -37,6 +37,9 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 // Static directory
 app.use(express.static('app/public'));
 
+//Require models
+var db = require('./app/models');
+
 // Routes
 // =============================================================
 require('./app/routes/api-routes.js')(app);
@@ -46,6 +49,13 @@ require('./app/routes/html-routes.js')(app);
 
 // Starts the server to begin listening
 // =============================================================
-server.listen(PORT, function() {
-  console.log(`Server started on http://localhost:${PORT}`);
+
+// Syncing our sequelize models and then starting our Express
+// =============================================================
+db.sequelize.sync({ force: true }).then(function() {
+  server.listen(PORT, function() {
+    console.log(`Server started on http://localhost:${PORT}`);
+  });
 });
+
+
