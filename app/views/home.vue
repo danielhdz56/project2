@@ -1,8 +1,10 @@
 <template>
     <div>
         <navbar></navbar>
-        <h1>{{text}}</h1>
-        <sidenav></sidenav>
+        <div id="main-grid">
+            <sidenav></sidenav>
+            <div class="content">Content</div>
+        </div>
     </div>
 </template>
 
@@ -21,3 +23,22 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+#main-grid {
+    display: grid;
+    grid-template-columns: 15vw 85vw;
+    grid-template-areas: "sidenav content";
+    height: 100%;
+    position: fixed;
+}
+
+#side-nav {
+    grid-area: sidenav;
+}
+
+.content {
+    grid-area: content;
+    background: #999;
+}
+</style>
