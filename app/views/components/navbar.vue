@@ -1,5 +1,5 @@
 <template>
-    <div id="grid">
+    <div id="main-nav">
         <ul class="main-nav">
             <li v-for="option in options">
                 <a :href="option.href" class="nav-link">{{option.name}}</a>
@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style scoped>
-#grid {
+#main-nav {
     display: grid;
     grid-template-columns: auto 200px;
     grid-template-areas: ". nav";
