@@ -37,12 +37,12 @@ CREATE TABLE stupost
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE teapost
+CREATE TABLE post
 (
 	id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-	t_id INT(11) NOT NULL,
-    t_mag VARCHAR(255) NOT NULL,
-    t_att VARCHAR(255) NOT NULL,
+	user_id INT(11) NOT NULL,
+    content VARCHAR(255) NOT NULL,
+    attachment VARCHAR(255) NOT NULL,
 	PRIMARY KEY (id)
 );
 
