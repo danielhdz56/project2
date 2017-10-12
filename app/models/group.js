@@ -20,10 +20,11 @@ var Group = sequelize.define("group", {
   timestamps: false 
 });
 
+//Group can belong to many users
 Group.belongsToMany(User, { through: UserGroup });
 
-// Syncs with DB
-// User.sync();
+// Syncs Group model with DB
+Group.sync();
 
-// Makes the User Model available for other files (will also create a table)
+// Makes the Group Model available for other files (will also create a table)
 module.exports = Group;

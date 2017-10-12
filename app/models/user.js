@@ -41,12 +41,19 @@ var User = sequelize.define("user", {
   timestamps: false 
 });
 
+//User can belong to many groups
 User.belongsToMany(Group, { through: UserGroup });
+//User can have attendance taken multiple times
+User.hasMany(Att_code,{ through: Attendance });
+//User can have multiple posts
+User.hasMany(Post);
+//User can belong to multiple class
+User.belongsToMany(Class, { through: UserClass });
+//User can belong to multiple departments
+User.belongsToMany(Department, { through: UserDepartment });
 
-
-
-// Syncs with DB
-//User.sync();
+// Syncs User with DB
+User.sync();
 
 // Makes the User Model available for other files (will also create a table)
 module.exports = User;

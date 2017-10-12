@@ -4,11 +4,12 @@
 
 // Dependencies
 // =============================================================
-const Student = require('../models/student.js');
-const Teacher = require('../models/teacher.js');
-const Stupost = require('../models/stupost.js');
-const Teapost = require('../models/teapost.js');
-
+const User = require('../models/user.js');
+const Group = require('../models/group.js');
+const Class = require('../models/class.js');
+const Department = require('../models/department.js');
+const Post = require('../models/post.js');
+const Attendance = require('../models/attendance.js');
 
 // Routes
 // =============================================================
