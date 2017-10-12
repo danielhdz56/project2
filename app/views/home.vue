@@ -3,8 +3,7 @@
         <navbar></navbar>
         <div id="main-grid">
             <sidenav v-on:selection="changeContent"></sidenav>
-            <grades v-show="content === 'Grades'" class="content"></grades>
-            <attendance v-show="content === 'Attendance'" class="content"></attendance>
+            <component :is="content" class="content"></component>
         </div>
     </div>
 </template>
@@ -16,7 +15,7 @@ import grades from "./components/grades.vue"
 import attendance from './components/attendance.vue';
 
 export default {
-    data: function() {
+    data() {
         return {
             content: ""
         }
@@ -30,7 +29,7 @@ export default {
     methods: {
         changeContent(contentName) {
             console.log(`content changed to ${contentName}`);
-            this.content = contentName
+            this.content = contentName;
         }
     },
 }

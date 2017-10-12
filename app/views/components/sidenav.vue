@@ -41,7 +41,7 @@ export default {
   methods: {
     changeState(name) {
       this.currentState = name;
-      this.$emit("selection", this.currentState);
+      this.$emit("selection", this.currentState.toLowerCase());
     }
   }
 }
