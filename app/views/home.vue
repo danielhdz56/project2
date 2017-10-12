@@ -4,6 +4,7 @@
         <div id="main-grid">
             <sidenav v-on:selection="changeContent"></sidenav>
             <grades v-show="content === 'Grades'" class="content"></grades>
+            <attendance v-show="content === 'Attendance'" class="content"></attendance>
         </div>
     </div>
 </template>
@@ -11,7 +12,8 @@
 <script>
 import navbar from './components/navbar.vue';
 import sidenav from './components/sidenav.vue';
-import grades from './components/grades.vue';
+import grades from "./components/grades.vue"
+import attendance from './components/attendance.vue';
 
 export default {
     data: function() {
@@ -22,7 +24,8 @@ export default {
     components: {
         navbar,
         sidenav,
-        grades
+        grades,
+        attendance
     },
     methods: {
         changeContent(contentName) {
