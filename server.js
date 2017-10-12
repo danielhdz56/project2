@@ -40,9 +40,10 @@ app.use(express.static('app/public'));
 //Require models
 var db = require('./app/models');
 
+
 // Routes
 // =============================================================
-require('./app/routes/api-routes.js')(app);
+// require('./app/routes/api-routes.js')(app);
 
 // Here we introduce HTML routing to serve different HTML files
 require('./app/routes/html-routes.js')(app);
@@ -57,5 +58,6 @@ db.sequelize.sync({ force: true }).then(function() {
     console.log(`Server started on http://localhost:${PORT}`);
   });
 });
+
 
 
