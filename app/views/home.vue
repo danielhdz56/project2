@@ -2,8 +2,8 @@
     <div>
         <navbar></navbar>
         <div id="main-grid">
-            <sidenav></sidenav>
-            <grades class="content"></grades>
+            <sidenav v-on:selection="changeContent"></sidenav>
+            <grades v-show="content === 'Grades'" class="content"></grades>
         </div>
     </div>
 </template>
@@ -16,31 +16,38 @@ import grades from './components/grades.vue';
 export default {
     data: function() {
         return {
+            content: ""
         }
     },
     components: {
         navbar,
         sidenav,
         grades
-    }
+    },
+    methods: {
+        changeContent(contentName) {
+            console.log(`content changed to ${contentName}`);
+            this.content = contentName
+        }
+    },
 }
 </script>
 
 <style scoped>
-    #main-grid {
-        display: grid;
-        grid-template-columns: 15vw 85vw;
-        grid-template-areas: "sidenav content";
-        height: 100%;
-        position: fixed;
-    }
+#main-grid {
+    display: grid;
+    grid-template-columns: 15vw 85vw;
+    grid-template-areas: "sidenav content";
+    height: 100%;
+    position: fixed;
+}
 
-    #side-nav {
-        grid-area: sidenav;
-    }
+#side-nav {
+    grid-area: sidenav;
+}
 
-    .content {
-        grid-area: content;
-        background: #999;
-    }
+.content {
+    grid-area: content;
+    background: #999;
+}
 </style>
