@@ -38,7 +38,7 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(express.static('app/public'));
 
 //Require models
-var db = require('./app/models');
+// var db = require('./app/models');
 
 // Routes
 // =============================================================
@@ -52,10 +52,10 @@ require('./app/routes/html-routes.js')(app);
 
 // Syncing our sequelize models and then starting our Express
 // =============================================================
-db.sequelize.sync({ force: true }).then(function() {
+// db.sequelize.sync({ force: true }).then(function() {
   server.listen(PORT, function() {
     console.log(`Server started on http://localhost:${PORT}`);
   });
-});
+// });
 
 

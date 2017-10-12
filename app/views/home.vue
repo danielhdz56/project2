@@ -3,7 +3,7 @@
         <navbar></navbar>
         <div id="main-grid">
             <sidenav></sidenav>
-            <grades class="content"></grades>
+            <attendance class="content"></attendance>
         </div>
     </div>
 </template>
@@ -11,7 +11,7 @@
 <script>
 import navbar from './components/navbar.vue';
 import sidenav from './components/sidenav.vue';
-import grades from './components/grades.vue';
+import attendance from './components/attendance.vue';
 
 export default {
     data: function() {
@@ -21,7 +21,7 @@ export default {
     components: {
         navbar,
         sidenav,
-        grades
+        attendance
     }
 }
 </script>
