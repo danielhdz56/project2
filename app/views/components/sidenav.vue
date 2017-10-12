@@ -2,7 +2,7 @@
   <div id="side-nav"> 
     <h3 id="header">Menu</h3>
     <ul>
-      <li v-for="link in links">
+      <li v-for="link in links" class="menu-link" @click="menuItemSelected(link.name)">
         <a :href="link.href">{{link.name}}</a>
       </li>
     </ul>
@@ -36,6 +36,12 @@ export default {
         href: '#',
         name: 'Settings'
       }]
+    }
+  },
+  methods: {
+    menuItemSelected(linkName) {
+      console.log(this.$el);
+      this.$emit("menuItemSelected", this.$el); //pass the selected item
     }
   }
 }
@@ -73,5 +79,19 @@ export default {
 
 #side-nav ul li:nth-child(odd) {
   background: cornflowerblue;
+}
+
+#side-nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+#side-nav ul li a:hover {
+  color: purple;
+  text-decoration: underline;
+}
+
+.selected {
+  background: red;
 }
 </style>
