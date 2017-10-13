@@ -6,7 +6,8 @@ var Sequelize = require("sequelize");
 var sequelize = require("../config/connection.js");
 
 // Creates a "Group" model that matches up with DB
-var Group = sequelize.define("group", {
+
+var Group = sequelize.define("groupe", {
   user_id: {
     type: Sequelize.STRING
   },

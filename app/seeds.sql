@@ -13,7 +13,7 @@ VALUES
 ('Juliette','Jones','Female','English Literature',null,null,null,'1500 Rice Blvd','jj87@hhs.edu','A2Du7ni3414!','http://coolspotters.com/files/photos/1087248/grace-phipps-profile.jpg?1375805602'),
 ('Katie','Schilinger','Female','Physical Education',null,null,null,'5363 Albans Ave','ks34@hhs.edu','23rfkht4f3y!','http://i.dailymail.co.uk/i/pix/2016/08/24/17/378D056D00000578-3756509-image-m-6_1472055512211.jpg');
 
-INSERT INTO group (user_id,short_slug,description)
+INSERT INTO groupe (user_id,short_slug,description)
 VALUES
 (2,'student','Erin Conway'),
 (5,'teacher','Daniel Hernandez');
@@ -23,7 +23,7 @@ VALUES
 (2,'Hi teach, can you help me with a math problem?','https://image.slidesharecdn.com/mathandgoogledrawing-cmcfn2015-151012025808-lva1-app6891/95/math-and-google-drawing-8-638.jpg?cb=1444620770'),
 (1,'Sure, but just so you know, you are wrong.','http://blog.startwithwhy.com/.a/6a00d834525fff69e201bb08887fa8970d-pi');
 
-INSERT INTO attendance(att_code,user_id)
+INSERT INTO attendance(attcode_id,user_id)
 VALUES
 (1,1),
 (2,2),
@@ -35,7 +35,8 @@ VALUES
 ('Absent','Needed to attend a funeral'),
 ('Truancy','Truancy');
 
-INSERT INTO classes(class_name,description,title,user_id,dept_id)
+
+INSERT INTO class(class_name,description,title,user_id,dept_id)
 VALUES
 ('AP Calculus','Fundamental Theorem of Calculus and Riemann\'s Theorem','student',2,null),
 ('AP Chemistry','Chemical Energetics and Molecular Orbital Theory','student',1,null);
