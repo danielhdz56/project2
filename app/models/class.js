@@ -6,11 +6,8 @@ var Sequelize = require("sequelize");
 var sequelize = require("../config/connection.js");
 
 // Creates a "Class" model that matches up with DB
-var Department = sequelize.define("department", {
+var Class = sequelize.define("class", {
   class_name: {
-    type: Sequelize.STRING
-  },
-  description: {
     type: Sequelize.STRING
   },
   description: {
