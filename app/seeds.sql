@@ -35,6 +35,7 @@ VALUES
 ('Absent','Needed to attend a funeral'),
 ('Truancy','Truancy');
 
+
 INSERT INTO class(class_name,description,title,user_id,dept_id)
 VALUES
 ('AP Calculus','Fundamental Theorem of Calculus and Riemann\'s Theorem','student',2,null),
