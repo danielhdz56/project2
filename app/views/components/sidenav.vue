@@ -2,8 +2,13 @@
   <div id="side-nav"> 
     <h3 id="header">Menu</h3>
     <ul>
+<<<<<<< HEAD
+      <li v-for="link in links" class="menu-link" @click="changeState(link.name)">
+        {{link.name}}
+=======
       <li v-for="link in links" class="menu-link" @click="changeState(link)">
         {{link}}
+>>>>>>> master
       </li>
     </ul>
   </div>
@@ -38,9 +43,7 @@ export default {
         else
           link.classList.remove("selected")
       }
-
     }
-
   },
   mounted() {
     this.$nextTick(function() {
@@ -92,5 +95,14 @@ export default {
 
 .selected {
   background: #606D7A !important;
+}
+
+#side-nav ul li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.selected {
+  background: red;
 }
 </style>
