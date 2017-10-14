@@ -5,7 +5,7 @@ var Sequelize = require("sequelize");
 // sequelize (lowercase) references our connection to the DB.
 var sequelize = require("../config/connection.js");
 
-// Creates a "Group" model that matches up with DB
+// Creates a "Department" model that matches up with DB
 var Department = sequelize.define("department", {
   user_id: {
     type: Sequelize.STRING

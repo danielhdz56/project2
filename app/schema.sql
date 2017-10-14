@@ -10,9 +10,9 @@ CREATE TABLE user
     lastname VARCHAR(255) NOT NULL,
     sex VARCHAR(255) NOT NULL,
     assignment VARCHAR(255) NOT NULL,
-    dailygrade VARCHAR(255) NOT NULL,
-    quizgrade VARCHAR(255) NOT NULL,
-    testgrade VARCHAR(255) NOT NULL,
+    dailygrade VARCHAR(255),
+    quizgrade VARCHAR(255),
+    testgrade VARCHAR(255),
     address VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
@@ -20,48 +20,56 @@ CREATE TABLE user
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE group
+
+CREATE TABLE groupe
 (
 	id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
     user_id INT(11) UNSIGNED NOT NULL,
 	short_slug VARCHAR(255) NOT NULL,
-    description VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE stupost
-(
-	id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-	s_id INT(11) NOT NULL,
-    s_msg VARCHAR(255) NOT NULL,
-    s_att VARCHAR(255) NOT NULL,
-	PRIMARY KEY (id)
-);
-
-CREATE TABLE teapost
-(
-	id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-	t_id INT(11) NOT NULL,
-    t_mag VARCHAR(255) NOT NULL,
-    t_att VARCHAR(255) NOT NULL,
-	PRIMARY KEY (id)
-);
-
-CREATE TABLE departments
-(
-	id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-	t_id INT(11) NOT NULL,
-    t_mag VARCHAR(255) NOT NULL,
-    t_att VARCHAR(255) NOT NULL,
-	PRIMARY KEY (id)
-);
-
-CREATE TABLE classes
-(
-	id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-	class_name INT(11) NOT NULL,
     description VARCHAR(255) NOT NULL,
-    position VARCHAR(255) NOT NULL,
-    user_id VARCHAR(255) INT,
-    department_id VARCHAR(255) INT
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE attendance
+(
+	id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	attcode_id INT(11) NOT NULL,
+    user_id INT(11) NOT NULL,	
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE att_code
+(
+	id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+    slug VARCHAR(255) NOT NULL,
+    description VARCHAR(255) NOT NULL,
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE post
+(
+	id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	user_id INT(11) NOT NULL,
+    content VARCHAR(255) NOT NULL,
+    attachment VARCHAR(255) NOT NULL,
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE department
+(
+	id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	user_id INT(11) UNSIGNED NOT NULL,
+    dept_name VARCHAR(255) NOT NULL,
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE class
+(
+	id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	class_name VARCHAR(255) NOT NULL,
+    description VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    user_id INT(1) UNSIGNED NOT NULL,
+    dept_id INT(11) UNSIGNED,
 	PRIMARY KEY (id)
 );
