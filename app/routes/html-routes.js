@@ -32,7 +32,7 @@ module.exports = function(app) {
 
   app.get("/home", function(req, res) {
     const data = {
-      text: "The Home vue page works!"
+      content: "grades"
     };
 
     res.renderVue("home", data, vue);
