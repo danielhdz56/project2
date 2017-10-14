@@ -31,8 +31,6 @@ var Class = sequelize.define("class", {
 Class.associate = function(models){
 Class.belongsToMany(models.Department, { through: DepartmentClass });
 }
-// Sync Class model with DB
-Class.sync();
 
 // Makes the Model available for other files (will also create a table)
 module.exports =Class;

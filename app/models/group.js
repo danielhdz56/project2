@@ -29,8 +29,6 @@ Group.associate = function (models) {
     targetKey: id
   });
 }
-// Syncs Group model with DB
-Group.sync();
 
 // Makes the Group Model available for other files (will also create a table)
 module.exports = Group;

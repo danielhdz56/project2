@@ -19,8 +19,6 @@ var Att_code = sequelize.define("att_code", {
 Att_code.association = function(models){
 Att_code.hasMany(Attendance);
 }
-// Syncs Att_code with DB
-Att_code.sync();
 
 // Makes the Att_code available for other files (will also create a table)
 module.exports = Att_code;

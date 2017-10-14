@@ -22,9 +22,7 @@ Department.associate = function(models){
 Department.belongsToMany(models.User, { through: UserDepartment });
 //Department can belong  to many classes
 Department.belongsToMany(models.Class, { through: DepartmentClass });
-// Syncs Department model with DB
 }
-Department.sync();
 
 // Makes the Model available for other files (will also create a table)
 module.exports = Department;

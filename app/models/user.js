@@ -43,6 +43,7 @@ var User = sequelize.define("user", {
   timestamps: false 
 });
 
+
 User.associate = function(models){
 //User can belong to many groups
 User.belongsToMany(models.Group, { through: UserGroup });
@@ -55,8 +56,6 @@ User.belongsToMany(models.Class, { through: UserClass });
 //User can belong to multiple departments
 User.belongsToMany(models.Department, { through: UserDepartment });
 }
-// Syncs User with DB
-User.sync(); 
 
 // Makes the User Model available for other files (will also create a table)
 module.exports = User;

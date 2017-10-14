@@ -18,11 +18,10 @@ var Attendance = sequelize.define("attendance", {
 });
 
 //Attendance taken belongs to one attendance status code
+
 Attendance.associate = function(models){
 Attendance.belongsTo(Att_code);
 }
-// Syncs Attendance with DB
-Attendance.sync();
 
 // Makes the Attendance Model available for other files (will also create a table)
 module.exports = Attendance;
