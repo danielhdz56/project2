@@ -17,11 +17,13 @@ var Department = sequelize.define("department", {
   timestamps: false 
 });
 
+Department.associate = function(models){
 //Department can belong to many users
-Department.belongsToMany(User, { through: UserDepartment });
+Department.belongsToMany(models.User, { through: UserDepartment });
 //Department can belong  to many classes
-Department.belongsToMany(Class, { through: DepartmentClass });
+Department.belongsToMany(models.Class, { through: DepartmentClass });
 // Syncs Department model with DB
+}
 Department.sync();
 
 // Makes the Model available for other files (will also create a table)

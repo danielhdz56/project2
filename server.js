@@ -38,11 +38,12 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(express.static('app/public'));
 
 //Require models
-var db = require('./app/models');
+var db = require('./app/models/user.js');
+var db = require('./app/models/group.js');
 
 // Routes
 // =============================================================
-// require('./app/routes/api-routes.js')(app);
+require('./app/routes/api-routes.js')(app);
 
 // Here we introduce HTML routing to serve different HTML files
 require('./app/routes/html-routes.js')(app);
@@ -52,8 +53,10 @@ require('./app/routes/html-routes.js')(app);
 
 // Syncing our sequelize models and then starting our Express
 // =============================================================
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync().then(function() {
   server.listen(PORT, function() {
     console.log(`Server started on http://localhost:${PORT}`);
   });
 });
+
+// { force: true }
