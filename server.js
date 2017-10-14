@@ -38,7 +38,7 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(express.static('app/public'));
 
 //Require models
-var db = require('./app/models/index');
+var db = require('./app/models');
 
 // Routes
 // =============================================================

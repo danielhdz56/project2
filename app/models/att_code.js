@@ -5,6 +5,9 @@ var Sequelize = require("sequelize");
 // sequelize (lowercase) references our connection to the DB.
 var sequelize = require("../config/connection.js");
 
+var Attendance = require("./attendance");
+
+
 // Creates a "Att_code" model that matches up with DB
 var Att_code = sequelize.define("att_code", {
   slug: {
@@ -16,7 +19,7 @@ var Att_code = sequelize.define("att_code", {
 });
 
 //Attendance status code has many attendances
-// Att_code.hasMany(Attendance);
+Att_code.hasMany(Attendance);
 
 // Syncs Att_code with DB
 // Att_code.sync();
