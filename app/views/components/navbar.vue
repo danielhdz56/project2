@@ -37,7 +37,6 @@ export default {
     grid-template-areas: ". nav";
     background:#24292e;
     padding: 5px 0;
-    margin-bottom: 5px;
 }
 
 .main-nav {
