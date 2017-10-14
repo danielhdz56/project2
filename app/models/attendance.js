@@ -27,8 +27,5 @@ Attendance.associate = function(models) {
 };
 
 
-//Attendance taken belongs to one attendance status code
-// Attendance.belongsTo(Att_code);
-
 // Makes the Attendance Model available for other files (will also create a table)
 module.exports = Attendance;

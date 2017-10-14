@@ -1,6 +1,5 @@
 // Dependencies
 // =============================================================
-
 var Sequelize = require("sequelize");
 // sequelize (lowercase) references our connection to the DB.
 var sequelize = require("../config/connection.js");
@@ -39,6 +38,9 @@ var User = sequelize.define("user", {
   },
   password:{
     type:Sequelize.STRING
+  },
+  photo:{
+    type: Sequelize.STRING
   }
 }, {
   timestamps: false 
@@ -59,9 +61,9 @@ User.associate = function(models) {
 // User can have attendance taken multiple times
 // User.hasMany(Att_code, { through: Attendance });
 //User can have multiple posts
-// User.hasMany(Post);
+User.hasMany(models.Post);
 //User can belong to multiple class
-// User.belongsToMany(Class, { through: UserClass });
+User.belongsToMany(models.Class, { through: UserClass });
 //User can belong to multiple departments
 // User.belongsToMany(Department, { through: UserDepartment });
 

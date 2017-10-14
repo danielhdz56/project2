@@ -18,14 +18,17 @@ var Group = sequelize.define("groupe", {
     type: Sequelize.STRING
   }
 }, {
-  timestamps: false 
+  timestamps: false
 });
 
 //Group can belong to many users
-// Group.belongsToMany(User, { through: UserGroup });
-
-// Syncs Group model with DB
-Group.sync();
+Group.associate = function (models) {
+  Group.belongsToMany(models.User, {
+    through: UserGroup,
+    foreignKey: user_id,
+    targetKey: id
+  });
+}
 
 // Makes the Group Model available for other files (will also create a table)
 module.exports = Group;
