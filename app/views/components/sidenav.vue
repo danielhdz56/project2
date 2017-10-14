@@ -2,8 +2,8 @@
   <div id="side-nav"> 
     <h3 id="header">Menu</h3>
     <ul>
-      <li v-for="link in links" class="menu-link" @click="changeState(link.name)">
-        {{link.name}}
+      <li v-for="link in links" class="menu-link" @click="changeState(link)">
+        {{link}}
       </li>
     </ul>
   </div>
@@ -13,30 +13,15 @@
 export default {
   data() {
     return {
-      links: [{
-        href: '#',
-        name: 'Grades'
-      }, {
-        href: '#',
-        name: 'Attendance'
-
-      }, {
-        href: '#',
-        name: 'Homework'
-
-      }, {
-        href: '#',
-        name: 'Messages'
-
-      }, {
-        href: '#',
-        name: 'Roster'
-
-      }, {
-        href: '#',
-        name: 'Settings'
-      }]
-    } 
+      links: [
+        "Grades",
+        "Attendance",
+        "Homework",
+        "Messages",
+        "Roster",
+        "Settings"
+      ]
+    }
   },
   methods: {
     changeState(name) {
