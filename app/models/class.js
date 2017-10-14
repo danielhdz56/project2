@@ -28,10 +28,9 @@ var Class = sequelize.define("class", {
 });
 
 //Class can belong to only one department
-// Class.belongsToMany(Department, { through: DepartmentClass });
-
-// Sync Class model with DB
-Class.sync();
+Class.associate = function(models){
+Class.belongsToMany(models.Department, { through: DepartmentClass });
+}
 
 // Makes the Model available for other files (will also create a table)
 module.exports =Class;
