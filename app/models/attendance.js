@@ -13,18 +13,16 @@ var Attendance = sequelize.define("attendance", {
   },
   user_id: {
     type: Sequelize.INTEGER
-  }
-},
-{
+  },
   createdAt: Sequelize.DATEONLY,
   updatedAt: Sequelize.DATEONLY
 });
 
 //Attendance taken belongs to one attendance status code
-Attendance.belongsTo(Att_code);
+// Attendance.belongsTo(Att_code);
 
 // Syncs Attendance with DB
-Attendance.sync();
+// Attendance.sync();
 
 // Makes the Attendance Model available for other files (will also create a table)
 module.exports = Attendance;

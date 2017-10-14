@@ -22,7 +22,7 @@ var Post = sequelize.define("post", {
 });
 
 //Post can belong to only one user
-Post.belongsTo(User);
+// Post.belongsTo(User);
 
 // Syncs Post model with DB
 Post.sync();

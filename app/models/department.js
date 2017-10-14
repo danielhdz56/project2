@@ -18,11 +18,11 @@ var Department = sequelize.define("department", {
 });
 
 //Department can belong to many users
-Department.belongsToMany(User, { through: UserDepartment });
+// Department.belongsToMany(User, { through: UserDepartment });
 //Department can belong  to many classes
-Department.belongsToMany(Class, { through: DepartmentClass });
+// Department.belongsToMany(Class, { through: DepartmentClass });
 // Syncs Department model with DB
-Department.sync();
+// Department.sync();
 
 // Makes the Model available for other files (will also create a table)
 module.exports = Department;

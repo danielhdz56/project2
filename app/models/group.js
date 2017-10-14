@@ -22,7 +22,7 @@ var Group = sequelize.define("groupe", {
 });
 
 //Group can belong to many users
-Group.belongsToMany(User, { through: UserGroup });
+// Group.belongsToMany(User, { through: UserGroup });
 
 // Syncs Group model with DB
 Group.sync();
