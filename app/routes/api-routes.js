@@ -4,6 +4,7 @@
 
 // Dependencies
 // =============================================================
+var db = require('../models/index');
 const User = require('../models/user.js');
 const Group = require('../models/group.js');
 const Class = require('../models/class.js');
@@ -11,6 +12,7 @@ const Department = require('../models/department.js');
 const Post = require('../models/post.js');
 const Attendance = require('../models/attendance.js');
 const Att_code = require('../models/att_code.js');
+
 
 // Routes
 // =============================================================
@@ -70,3 +72,4 @@ app.get("/api/:user?",(request,response)=>{
     
 // });
 };//end of module.exports = function(app)
+
