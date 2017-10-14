@@ -35,7 +35,7 @@ export default {
     display: grid;
     grid-template-columns: auto 200px;
     grid-template-areas: ". nav";
-    background: #eee;
+    background: #333;
     padding: 5px 0;
 }
 
@@ -47,11 +47,11 @@ export default {
 
 .main-nav li a {
     text-decoration: none;
-    color: black;
+    color: #fff;
+    font-family: sans-serif;
 }
 
 .main-nav li a:hover {
     text-decoration: underline;
-    color: red;
 }
 </style>
