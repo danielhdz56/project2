@@ -1,30 +1,31 @@
 <template>
-    <table id="table-grades">
+    <table>
         <thead>
             <tr>
                 <th>Student ID</th>
-                <th>Student Name</th>
-                <th>Test</th>
-                <th>Quiz</th>
-                <th>Homework</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Sex</th>
+                <th>Address</th>
+                <th>email</th>
             </tr>
         </thead>
-        
+
         <tbody>
             <tr :key="student.id" v-for="student in students">
                 <td>{{student.id}}</td>
-                <td>{{student.firstname}} {{student.lastname}}</td>
-                <td>{{student.testgrade}}</td>
-                <td>{{student.quizgrade}}</td>
-                <td>{{student.dailygrade}}</td>
+                <td>{{student.lastName}}</td>
+                <td>{{student.firstName}}</td>
+                <td>{{student.sex}}</td>
+                <td>{{student.address}}</td>
+                <td>{{student.email}}</td>
             </tr>
         </tbody>
     </table>
 </template>
 
 <script>
-
-export default {    
+export default {
     data() {
         return {
             students: []
@@ -41,6 +42,6 @@ export default {
 }
 </script>
 
-<style scoped>
-</style>
+<style>
 
+</style>

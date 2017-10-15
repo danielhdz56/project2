@@ -13,6 +13,7 @@ import navbar from './components/navbar.vue';
 import sidenav from './components/sidenav.vue';
 import grades from "./components/grades.vue"
 import attendance from './components/attendance.vue';
+import roster from "./components/roster.vue"
 
 export default {
     data() {
@@ -26,7 +27,8 @@ export default {
         navbar,
         sidenav,
         grades,
-        attendance
+        attendance,
+        roster
     },
     methods: {
         changeContent(contentName) {
