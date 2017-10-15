@@ -50,40 +50,5 @@ export default {
 </script>
 
 <style scoped>
-#table-grades {
-    border: solid thin;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-#table-grades th,
-#table-grades td {
-    border: solid thin;
-    padding: 0.5rem 2rem;
-    background: whitesmoke;
-}
-
-#table-grades td {
-    white-space: nowrap;
-}
-
-#table-grades th {
-    font-weight: normal;
-}
-
-#table-grades td {
-    border-style: none solid;
-    vertical-align: top;
-}
-
-#table-grades th {
-    padding: 0.2em;
-    vertical-align: middle;
-    text-align: center;
-}
-
-#table-grades tbody td:first-child::after {
-    content: leader(". ");
-}
 </style>
 

@@ -53,6 +53,33 @@ export default {
 
 .content {
     grid-area: content;
-    background: #999;
+    margin: 0.5% auto;
+    width: 99%;
 }
+
+
+/* Table stuff*/
+
+table,
+th,
+td {
+    border-collapse: collapse;
+    border: 1px solid #24292e;
+    background: #fff;
+}
+
+th {
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px;
+    background: #606d7a;
+    color: white;
+}
+
+td {
+    text-align: left;
+    vertical-align: middle;
+    padding: 15px;
+}
+
 </style>
