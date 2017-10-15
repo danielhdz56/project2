@@ -11,7 +11,7 @@ var db = require('../models');
 module.exports = function(app) {
     //Get all students' info
     app.get("/api/users",(request,response)=>{
-        User.findAll({}).then((results)=>{
+        db.user.findAll({}).then((results)=>{
             response.json(results);
         });
     });

@@ -11,28 +11,38 @@
         </thead>
         
         <tbody>
-            <tr :key="student.ID" v-for="student in students">
-                <td>{{student.ID}}</td>
-                <td>{{student.firstName}} {{student.lastName}}</td>
-                <td>{{student.testGrade}}</td>
-                <td>{{student.quizGrade}}</td>
-                <td>{{student.dailyGrade}}</td>
+            <tr :key="student.id" v-for="student in students">
+                <td>{{student.id}}</td>
+                <td>{{student.firstname}} {{student.lastname}}</td>
+                <td>{{student.testgrade}}</td>
+                <td>{{student.quizgrade}}</td>
+                <td>{{student.dailygrade}}</td>
             </tr>
         </tbody>
     </table>
 </template>
 
 <script>
-export default {
+
+export default {    
     data() {
         return {
             students: []
         }
     },
+    // created() {
+    //     this.$nextTick(function() {
+    //         axios.get('api/user/student').then((res) => {
+    //             this.students = res.data;
+    //             console.log(this.students);
+    //         })
+    //     })
+    // }
     mounted() {
         this.$nextTick(function() {
-            axios.get("/api/users").then(function(res) {
+            axios.get("/api/user/student").then((res) => {
                 this.students = res.data;
+                console.log(this.students);
             });
         });
     },
