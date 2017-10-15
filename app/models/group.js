@@ -18,7 +18,7 @@ var Group = sequelize.define("groupe", {
     type: Sequelize.STRING
   }
 }, {
-  timestamps: false 
+  timestamps: false
 });
 
 //Group can belong to many users

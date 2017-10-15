@@ -15,18 +15,16 @@ var Post = sequelize.define("post", {
   },
   attachment: {
     type: Sequelize.STRING
-  },
+  }, 
   createdAt: Sequelize.DATE,
   updatedAt: Sequelize.DATE
 });
 
 // User.associate = function(models){
 //Post can belong to only one user
-// Post.belongsTo(models.User);
-// }
-
-// Syncs Post model with DB
-Post.sync();
+Post.associate = function(models){
+Post.belongsTo(models.User);
+}
 
 // Makes the Model available for other files (will also create a table)
 module.exports = Post;
