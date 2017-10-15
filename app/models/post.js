@@ -21,9 +21,9 @@ var Post = sequelize.define("post", {
 });
 
 //Post can belong to only one user
-Post.associate = function(models){
-Post.belongsTo(models.User);
-}
+// Post.associate = function(models){
+// Post.belongsTo(models.User);
+// }
 
 // Makes the Model available for other files (will also create a table)
 module.exports = Post;
