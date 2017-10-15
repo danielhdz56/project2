@@ -16,12 +16,18 @@ var Att_code = sequelize.define("att_code", {
   description: {
     type: Sequelize.STRING
   }
+}, {
+    classMethods: {
+        associate: function(models) {
+            Att_code.hasMany(models.Attendance);
+        }
+    }
 });
 
-//Attendance status code has many attendances
-Att_code.association = function(models){
-Att_code.hasMany(Attendance);
-}
+// // Attendance status code has many attendances
+// Att_code.association = function(models){
+//   Att_code.hasMany(models.Attendance);
+// }
 
-// Makes the Att_code available for other files (will also create a table)
-module.exports = Att_code;
+
+// module.exports = Att_code;
