@@ -1,75 +1,52 @@
-// Dependencies
-// =============================================================
-var Sequelize = require("sequelize");
-// sequelize (lowercase) references our connection to the DB.
-var sequelize = require("../config/connection.js");
+module.exports = function(sequelize, DataTypes){
+  var User = sequelize.define("user", {
+    firstname: {
+      type: DataTypes.STRING
+    },
+    lastname: {
+      type: DataTypes.STRING
+    },
+    sex: {
+      type: DataTypes.STRING
+    },
+    assignment:{
+      type: DataTypes.STRING
+    },
+    // You should create a grade book for this rather than placing it here
+    // Becuase user have grades and classes have grades
+    // Calculate GPA on the fly
+    dailygrade:{
+      type: DataTypes.STRING
+    },
+    quizgrade:{
+      type: DataTypes.STRING
+    },
+    testgrade:{
+      type: DataTypes.STRING
+    },
+    address:{
+      type: DataTypes.STRING
+    },
+    email: {
+      type: DataTypes.STRING
+    },
+    password:{
+      type:DataTypes.STRING
+    },
+    photo:{
+      type: DataTypes.STRING
+    }
+  });
 
-var Att_code = require("./att_code");
-var Attendance = require("./attendance");
+  User.associate = function(models) {
+    // Associating User with Attendance
+    // When an User is deleted, also delete any associated Attendance
+    User.belongsToMany(models.groupe, {through: "group_user"});
+    User.belongsToMany(models.att_code, {through: "attendance"});
+    User.belongsToMany(models.class, {through: "class_user"});
+    User.hasMany(models.post);
+    User.belongsToMany(models.department, {through: "department_user"});
+  };
 
-// Creates a "User" model that matches up with DB
-var User = sequelize.define("user", {
-  firstname: {
-    type: Sequelize.STRING
-  },
-  lastname: {
-    type: Sequelize.STRING
-  },
-  sex: {
-    type: Sequelize.STRING
-  },
-  assignment:{
-    type: Sequelize.STRING
-  },
-  dailygrade:{
-    type: Sequelize.STRING
-  },
-  quizgrade:{
-    type: Sequelize.STRING
-  },
-  testgrade:{
-    type: Sequelize.STRING
-  },
-  address:{
-    type: Sequelize.STRING
-  },
-  email: {
-    type: Sequelize.STRING
-  },
-  password:{
-    type:Sequelize.STRING
-  },
-  photo:{
-    type: Sequelize.STRING
-  }
-}, {
-  timestamps: false,
-  classMethods: function(model) {
-    User.hasMany(models.Attendance);
-  }
-});
-
-// User.associate = function(models) {
-//   // Associating User with Attendance
-//   // When an User is deleted, also delete any associated Attendance
-//   User.hasMany(models.Attendance, {
-//     onDelete: "cascade"
-//   });
-// };
-
-
-
-//User can belong to many groups
-// User.belongsToMany(Group, { through: UserGroup });
-// User can have attendance taken multiple times
-// User.hasMany(Att_code, { through: Attendance });
-//User can have multiple posts
-// User.hasMany(models.Post);
-//User can belong to multiple class
-// User.belongsToMany(models.Class, { through: UserClass });
-//User can belong to multiple departments
-// User.belongsToMany(Department, { through: UserDepartment });
-
-
-// Makes the User Model available for other files (will also create a table)
-module.exports = User;
+  return User;
+};
