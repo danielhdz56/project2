@@ -43,16 +43,19 @@ var User = sequelize.define("user", {
     type: Sequelize.STRING
   }
 }, {
-  timestamps: false 
+  timestamps: false,
+  classMethods: function(model) {
+    User.hasMany(models.Attendance);
+  }
 });
 
-User.associate = function(models) {
-  // Associating User with Attendance
-  // When an User is deleted, also delete any associated Attendance
-  User.hasMany(models.Attendance, {
-    onDelete: "cascade"
-  });
-};
+// User.associate = function(models) {
+//   // Associating User with Attendance
+//   // When an User is deleted, also delete any associated Attendance
+//   User.hasMany(models.Attendance, {
+//     onDelete: "cascade"
+//   });
+// };
 
 
 
@@ -61,9 +64,9 @@ User.associate = function(models) {
 // User can have attendance taken multiple times
 // User.hasMany(Att_code, { through: Attendance });
 //User can have multiple posts
-User.hasMany(models.Post);
+// User.hasMany(models.Post);
 //User can belong to multiple class
-User.belongsToMany(models.Class, { through: UserClass });
+// User.belongsToMany(models.Class, { through: UserClass });
 //User can belong to multiple departments
 // User.belongsToMany(Department, { through: UserDepartment });
 
