@@ -6,7 +6,7 @@
 var Sequelize = require("sequelize");
 
 // Creates mySQL connection using Sequelize
-var sequelize = new Sequelize("chalkboardplus_db", "root", "password", {
+var sequelize = new Sequelize("chalkboardplus_db", "root", "rootpassword", {
   host: "localhost",
   dialect: "mysql",
   pool: {
