@@ -10,10 +10,12 @@ const vue = {
     meta: [{
       script: 'https://unpkg.com/vue@2.4.2/dist/vue.js'
     }, {
+      script: "https://unpkg.com/axios/dist/axios.min.js"
+    }, {
       name: 'viewport',
       content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
-      }, {
-        style: 'https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css'  
+    }, {
+      style: 'https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css'
     }],
   }
 };
@@ -45,7 +47,7 @@ module.exports = function(app) {
 
     res.renderVue("signup", data, vue);
   });
-    
+
   app.get("/login", function(req, res) {
     const data = {
       text: "The login vue page works!"

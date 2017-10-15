@@ -60,3 +60,5 @@ typings/
 #Ignore vagrant file stuff for now
 Vagrantfile
 .vagrant/
+
+.vscode
