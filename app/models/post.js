@@ -20,6 +20,7 @@ var Post = sequelize.define("post", {
   updatedAt: Sequelize.DATE
 });
 
+// User.associate = function(models){
 //Post can belong to only one user
 Post.associate = function(models){
 Post.belongsTo(models.User);

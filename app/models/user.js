@@ -40,11 +40,11 @@ var User = sequelize.define("user", {
     type:Sequelize.STRING
   },
   photo:{
-    type: Sequelize.STRING
+    type:Sequelize.STRING
   }
 }, {
   timestamps: false 
-});
+});//end User model
 
 User.associate = function(models) {
   // Associating User with Attendance
@@ -67,6 +67,12 @@ User.belongsToMany(models.Class, { through: UserClass });
 //User can belong to multiple departments
 // User.belongsToMany(Department, { through: UserDepartment });
 
+//Assume User can only be either Teacher or Student
+User.belongsTo(models.Group,{
+  foreignKey:{
+  allowNull: false
+}
+});
 
 // Makes the User Model available for other files (will also create a table)
 module.exports = User;
