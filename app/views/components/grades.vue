@@ -30,22 +30,14 @@ export default {
             students: []
         }
     },
-    // created() {
-    //     this.$nextTick(function() {
-    //         axios.get('api/user/student').then((res) => {
-    //             this.students = res.data;
-    //             console.log(this.students);
-    //         })
-    //     })
-    // }
-    mounted() {
+    created() {
         this.$nextTick(function() {
-            axios.get("/api/user/student").then((res) => {
+            axios.get('api/user/student').then((res) => {
                 this.students = res.data;
                 console.log(this.students);
-            });
-        });
-    },
+            })
+        })
+    }
 }
 </script>
 
