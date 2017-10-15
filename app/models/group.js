@@ -1,34 +1,19 @@
-// Dependencies
-// =============================================================
-
-var Sequelize = require("sequelize");
-// sequelize (lowercase) references our connection to the DB.
-var sequelize = require("../config/connection.js");
-
-// Creates a "Group" model that matches up with DB
-
-var Group = sequelize.define("groupe", {
-  user_id: {
-    type: Sequelize.STRING
-  },
-  short_slug: {
-    type: Sequelize.STRING
-  },
-  description: {
-    type: Sequelize.STRING
-  }
-}, {
-  timestamps: false
-});
-
-//Group can belong to many users
-Group.associate = function (models) {
-  Group.belongsToMany(models.User, {
-    through: UserGroup,
-    foreignKey: user_id,
-    targetKey: id
+module.exports = function(sequelize, DataTypes){
+  // Time stamps are extraordinarily useful for selecting information
+  // and dealing with users who do things they should not.
+  var Group = sequelize.define("groupe", {
+    short_slug: {
+      type: DataTypes.STRING
+    },
+    description: {
+      type: DataTypes.STRING
+    }
   });
-}
+  
+  //Group can belong to many users
+  Group.associate = function (models) {
+    Group.belongsToMany(models.user, {through: "group_user"});
+  };
 
-// Makes the Group Model available for other files (will also create a table)
-module.exports = Group;
+  return Group;
+};

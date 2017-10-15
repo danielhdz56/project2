@@ -4,15 +4,7 @@
 
 // Dependencies
 // =============================================================
-var db = require('../models/index');
-const User = require('../models/user.js');
-const Group = require('../models/group.js');
-const Class = require('../models/class.js');
-const Department = require('../models/department.js');
-const Post = require('../models/post.js');
-const Attendance = require('../models/attendance.js');
-const Att_code = require('../models/att_code.js');
-
+var db = require('../models');
 
 // Routes
 // =============================================================
@@ -24,6 +16,18 @@ module.exports = function(app) {
         });
     });
     
+    app.get("/api/user/:user", (request, response) => {
+        db.user.findAll({include: {
+            model: db.groupe,
+            where: {
+                short_slug: request.params.user
+            }
+        }
+        }).then(function(results){
+            response.json(results);
+        });
+    });
+
     //Get all attendances' info 
     app.get("/api/attendances", (request, response) => {
         Attendance.findAll({}).then((results) => {
@@ -31,7 +35,9 @@ module.exports = function(app) {
         });
     });
     
-}//end of module.exports = function(app)
+};
+
+//end of module.exports = function(app)
 //Get all students' info
 // app.get("/api/:user?",(request,response)=>{
 //     switch(request.params.user)

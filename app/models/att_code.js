@@ -1,27 +1,20 @@
-// Dependencies
-// =============================================================
+module.exports = function(sequelize, DataTypes){
 
-var Sequelize = require("sequelize");
-// sequelize (lowercase) references our connection to the DB.
-var sequelize = require("../config/connection.js");
+  // Creates a "Att_code" model that matches up with DB
+  var Att_Code = sequelize.define("att_code", {
+    slug: {
+      type: DataTypes.STRING
+    },
+    description: {
+      type: DataTypes.STRING
+    }
+  });
 
-var Attendance = require("./attendance");
+  //Attendance status code has many attendances
+  Att_Code.association = function(models){
+    Att_Code.BelongsToMany(models.users, {through: "attendance"});
 
-
-// Creates a "Att_code" model that matches up with DB
-var Att_code = sequelize.define("att_code", {
-  slug: {
-    type: Sequelize.STRING
-  },
-  description: {
-    type: Sequelize.STRING
   }
-});
 
-//Attendance status code has many attendances
-Att_code.association = function(models){
-Att_code.hasMany(Attendance);
-}
-
-// Makes the Att_code available for other files (will also create a table)
-module.exports = Att_code;
+  return Att_Code;
+};
