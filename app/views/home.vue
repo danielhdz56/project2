@@ -3,7 +3,7 @@
         <navbar></navbar>
         <div id="main-grid">
             <sidenav v-on:selection="changeContent"></sidenav>
-            <component :is="content" class="content"></component>
+            <component :is="content" :grades="test" class="content"></component>
         </div>
     </div>
 </template>
@@ -18,7 +18,8 @@ export default {
     data() {
         return {
             content: "",
-            students: "studet"
+            students: "studet",
+            test: "123"
         }
     },
     components: {
@@ -26,15 +27,6 @@ export default {
         sidenav,
         grades,
         attendance
-    },
-    mounted() {
-        this.$nextTick(function() {
-            axios.get("/api/users")
-                .then(function(res) {
-                    this.students = res.data;
-                    console.log(res.data);
-                });
-        });
     },
     methods: {
         changeContent(contentName) {
