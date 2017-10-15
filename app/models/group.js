@@ -9,7 +9,7 @@ var sequelize = require("../config/connection.js");
 
 var Group = sequelize.define("groupe", {
   user_id: {
-    type: Sequelize.STRING
+    type: Sequelize.INTEGER
   },
   short_slug: {
     type: Sequelize.STRING
@@ -22,10 +22,13 @@ var Group = sequelize.define("groupe", {
 });
 
 //Group can belong to many users
-// Group.belongsToMany(User, { through: UserGroup });
+Group.associate = function(models){
+// Group.belongsToMany(models.User, { through: UserGroup,
+// foreignKey: user_id,
+// targetKey: id });
+Group.hasMany(models.User);
+}
 
-// Syncs Group model with DB
-Group.sync();
 
 // Makes the Group Model available for other files (will also create a table)
 module.exports = Group;

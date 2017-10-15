@@ -7,10 +7,6 @@ var sequelize = require("../config/connection.js");
 
 // Creates a "Attendance" model that matches up with DB
 var Attendance = sequelize.define("attendance", {
-  attcode_id: {
-
-    type: Sequelize.INTEGER 
-  },
   user_id: {
     type: Sequelize.INTEGER
   },

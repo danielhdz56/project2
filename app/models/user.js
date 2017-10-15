@@ -36,12 +36,19 @@ var User = sequelize.define("user", {
   },
   password:{
     type:Sequelize.STRING
+  },
+  photo:{
+    type:Sequelize.STRING
   }
 }, {
   timestamps: false 
 });
-//User can belong to many groups
-// User.belongsToMany(Group, { through: UserGroup });
+// User can belong to many groups
+
+User.associate = function(models){
+// User.belongsToMany(models.Group, { through: UserGroup,
+//   foreignKey: id,
+//   targetKey: user_id});
 //User can have attendance taken multiple times
 // User.hasMany(Att_code,{ through: Attendance });
 //User can have multiple posts
@@ -51,16 +58,13 @@ var User = sequelize.define("user", {
 //User can belong to multiple departments
 // User.belongsToMany(Department, { through: UserDepartment });
 
-// Syncs User with DB
-
-
-
-
-
-
-
-
-// User.sync();
+//Assume User can only be either Teacher or Student
+User.belongsTo(models.Group,{
+  foreignKey:{
+  allowNull: false
+}
+});
+}//end of User model
 
 // Makes the User Model available for other files (will also create a table)
 module.exports = User;
