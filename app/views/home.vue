@@ -13,12 +13,12 @@ import navbar from './components/navbar.vue';
 import sidenav from './components/sidenav.vue';
 import grades from "./components/grades.vue"
 import attendance from './components/attendance.vue';
-import axios from "axios"
 
 export default {
     data() {
         return {
             content: "",
+            students: "studet"
         }
     },
     components: {
@@ -27,16 +27,20 @@ export default {
         grades,
         attendance
     },
-    computed: {
-        async students() {
-            var students = await axios.get("/api/users");
-            console.log(students.data);
-        }
+    mounted() {
+        this.$nextTick(function() {
+            axios.get("/api/users")
+                .then(function(res) {
+                    this.students = res.data;
+                    console.log(res.data);
+                });
+        });
     },
     methods: {
         changeContent(contentName) {
             console.log(`content changed to ${contentName}`);
             this.content = contentName;
+            console.log(this.students);
         }
     },
 }
