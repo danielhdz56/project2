@@ -13,11 +13,12 @@ import navbar from './components/navbar.vue';
 import sidenav from './components/sidenav.vue';
 import grades from "./components/grades.vue"
 import attendance from './components/attendance.vue';
+import axios from "axios"
 
 export default {
     data() {
         return {
-            content: ""
+            content: "",
         }
     },
     components: {
@@ -25,6 +26,12 @@ export default {
         sidenav,
         grades,
         attendance
+    },
+    computed: {
+        async students() {
+            var students = await axios.get("/api/users");
+            console.log(students.data);
+        }
     },
     methods: {
         changeContent(contentName) {
