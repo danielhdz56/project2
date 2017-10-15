@@ -18,7 +18,7 @@ export default {
     data() {
         return {
             content: "",
-            students: "studet",
+            students: "student",
             test: "123"
         }
     },
@@ -32,7 +32,6 @@ export default {
         changeContent(contentName) {
             console.log(`content changed to ${contentName}`);
             this.content = contentName;
-            console.log(this.students);
         }
     },
 }
