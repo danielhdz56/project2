@@ -41,7 +41,7 @@ export default {
 <style scoped>
 #main-grid {
     display: grid;
-    grid-template-columns: minmax(100px, 8vw) 92vw;
+    grid-template-columns: minmax(100px, 8vw) minmax(auto, 92vw);
     grid-template-areas: "sidenav content";
     height: 100%;
     position: fixed;
