@@ -16,9 +16,9 @@ export default {
       links: [
         "Grades",
         "Attendance",
+        "Roster",
         "Homework",
         "Messages",
-        "Roster",
         "Settings"
       ]
     }
