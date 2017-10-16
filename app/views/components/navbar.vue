@@ -14,7 +14,7 @@ export default {
         return {
             options: [
                 {
-                    href: 'dashboard',
+                    href: 'home',
                     name: 'Dashboard'
                 },
                 {
