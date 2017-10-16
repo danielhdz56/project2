@@ -72,7 +72,7 @@ input[type=button] {
   min-width: 600px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr) 1fr;
+  grid-template-rows: repeat(3, 1fr);
   grid-template-areas: "head head user user" "head head pass pass" "head head btn btn";
 }
 
