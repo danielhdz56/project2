@@ -33,7 +33,7 @@ export default {
 <style scoped>
 #main-nav {
     display: grid;
-    grid-template-columns: auto 300px;
+    grid-template-columns: auto 260px;
     grid-template-areas: ". nav";
     background:#24292e;
     padding: 5px 0;
