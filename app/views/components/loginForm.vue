@@ -40,11 +40,6 @@ button,
   color: white;
 }
 
-label {
-  text-align: center;
-  width: 100%;
-}
-
 input {
   border: none;
   margin: 5px 0;
@@ -70,7 +65,7 @@ input[type=button] {
 }
 
 #login-form {
-  background: rgba(41,45,50, 0.6);
+  background: rgba(41,45,50, 0.25);
   border-radius: 3px;
   padding: 30px;
   width: 50%;
