@@ -42,7 +42,7 @@ export default {
 
 <style scoped>
 body {
-    background: url("https://www.toptal.com/designers/subtlepatterns/patterns/zwartevilt.png");
+    background: url("assets/pictures/linen.png");
 }
 
 #main-grid {
