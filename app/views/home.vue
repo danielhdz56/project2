@@ -41,6 +41,10 @@ export default {
 </script>
 
 <style scoped>
+body {
+    background: url("https://www.toptal.com/designers/subtlepatterns/patterns/zwartevilt.png");
+}
+
 #main-grid {
     display: grid;
     grid-template-columns: minmax(100px, 8vw) minmax(auto, 92vw);
@@ -58,6 +62,8 @@ export default {
     margin: 0.5% auto;
     width: 99%;
 }
+
+
 
 /* Table stuff*/
 
@@ -82,5 +88,4 @@ td {
     vertical-align: middle;
     padding: 15px;
 }
-
 </style>
