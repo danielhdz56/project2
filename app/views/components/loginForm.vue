@@ -30,7 +30,7 @@ export default {
 
 <style>
 body {
-  background: url("https://hdwallsource.com/img/2014/8/colorful-ios-wallpaper-22410-23023-hd-wallpapers.jpg");
+  background: url("../assets/pictures/backdrop.jpeg");
 }
 
 label,
