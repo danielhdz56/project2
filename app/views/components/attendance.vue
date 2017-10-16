@@ -1,13 +1,26 @@
 <template>
-    <table id="table-attendance">
+    <table>
         <thead>
-            <tr v-for="row in rowsHead">
-                <th :colspan="header.colspan" :rowspan="header.rowspan" v-for="header in row.headers">{{header.name}}</th>
+            <tr>
+                <th rowspan="3">Student ID</th>
+                <th rowspan="3">Student Name</th>
+                <th rowspan="1" colspan="3">Attendance</th>
+            </tr>
+
+            <tr>
+                <th>Present</th>
+                <th>Absent</th>
+                <th>Tardy</th>
             </tr>
         </thead>
+
         <tbody>
-            <tr v-for="row in rowsBody">
-                <td v-for="dataCell in row.dataCells">{{dataCell.name}}</td>
+            <tr :key="student.id" v-for="student in students">
+                <td>{{student.id}}</td>
+                <td>{{student.firstname}} {{student.lastname}}</td>
+                <td><div class="checkmark" v-if="student.att_codes[0].id === 1"></div></td>
+                <td><div class="checkmark" v-if="student.att_codes[0].id === 2"></div></td>
+                <td><div class="checkmark" v-if="student.att_codes[0].id === 3"></div></td>
             </tr>
         </tbody>
     </table>
@@ -15,88 +28,30 @@
 
 <script>
 
-
 export default {
     data() {
         return {
-            rowsHead: [{
-                headers: [{
-                        name: 'Student ID',
-                        rowspan: '3'
-                    }, {
-                        name: 'Student Name',
-                        rowspan: '3'
-                    },
-                    {
-                        name: 'Attendance',
-                        rowspan: '1',
-                        colspan: '3'
-                    }
-                ]}, {
-                headers: [{
-                    name: 'Present',
-                    rowspan: ''
-                }, {
-                    name: 'Absent',
-                    rowspan: ''
-                }, {
-                    name: 'Tardy',
-                    rowspan: ''
-                }]
-            }],
-            rowsBody: [{
-                dataCells: [{
-                    name: '12345' // id
-                }, {
-                    name: 'foo' // name
-                }, {
-                    name: '1' // Present
-                }, {
-                    name: '0' // Absent
-                }, {
-                    name: '0' // Tardy
-                }]
-            }]
+            students: []
         }
+    },
+    created() {
+        this.$nextTick(function() {
+            axios.get('api/attendances').then((res) => {
+                this.students = res.data;
+            });
+        });
     }
 }
 </script>
 
 <style scoped>
-    #table-attendance {
-        border: solid thin;
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    #table-attendance th,
-    #table-attendance td {
-        border: solid thin;
-        padding: 0.5rem 2rem;
-        background: whitesmoke;
-    }
-
-    #table-attendance td {
-        white-space: nowrap;
-    }
-
-    #table-attendance th {
-        font-weight: normal;
-    }
-
-    #table-attendance td {
-        border-style: none solid;
-        vertical-align: top;
-    }
-
-    #table-attendance th {
-        padding: 0.2em;
-        vertical-align: middle;
-        text-align: center;
-    }
-
-    #table-attendance tbody td:first-child::after {
-        content: leader(". ");
+    .checkmark {
+        display:inline-block;
+        width: 3px;
+        height: 6px;
+        border: solid #000;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
     }
 </style>
 
