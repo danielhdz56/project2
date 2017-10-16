@@ -32,6 +32,7 @@ export default {
         changeContent(contentName) {
             console.log(`content changed to ${contentName}`);
             this.content = contentName;
+            console.log(this.students);
         }
     },
 }

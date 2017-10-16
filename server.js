@@ -57,3 +57,5 @@ db.sequelize.sync({ force: false }).then(function() {
     console.log(`Server started on http://localhost:${PORT}`);
   });
 });
+
+// { force: true }

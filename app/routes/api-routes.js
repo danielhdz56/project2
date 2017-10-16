@@ -28,7 +28,7 @@ module.exports = function(app) {
         });
     });
 
-    app.get('/api/attendances/:user?', (request, response) => {
+    app.get('/api/attendances/', (request, response) => {
         db.user.findAll({
             include: {
                 model: db.att_code,

@@ -36,7 +36,7 @@ export default {
     },
     created() {
         this.$nextTick(function() {
-            axios.get('api/attendances/student').then((res) => {
+            axios.get('api/attendances').then((res) => {
                 this.students = res.data;
             });
         });
