@@ -73,6 +73,7 @@ td {
     border-collapse: collapse;
     border: 1px solid #24292e;
     background: #fff;
+    font-family: sans-serif;
 }
 
 th {
