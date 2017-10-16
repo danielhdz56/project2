@@ -1,39 +1,26 @@
-<template lang="html">
-  <div>
-    <h2>Login Form</h2>
-    <form>
-      <div class="imgcontainer">
-        <img src="#" alt="Logo" class="logo">
+<template>
+  <div id="login-container">
+
+    <div id="login-form">
+      
+      <div id="usernamecontainer">
+        <label for="username"></label><br>
+        <input type="text" id="username">
       </div>
 
-      <div class="container">
-        <label>
-          <b>Username</b>
-        </label>
-        <input type="text" placeholder="Enter Username" name="username" required>
-
-        <label>
-          <b>Password</b>
-        </label>
-        <input type="password" placeholder="Enter Password" name="password" required>
-
-        <button type="submit">Login</button>
-        <input type="checkbox" checked="checked"> Remember me
+      <div id="password-container">
+        <label for="password"></label>
+        <input type="password" id="password">
       </div>
 
-      <div class="container" style="background-color:#f1f1f1">
-        <button type="button" class="cancelbtn">Cancel</button>
-        <span class="password">Forgot
-          <a href="#">password?</a>
-        </span>
-      </div>
-    </form>
+      <button id="sumbit">Submit</button>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  data: function () {
+  data() {
     return {
     }
   }
@@ -41,56 +28,19 @@ export default {
 </script>
 
 <style>
-  form {
-    border: 3px solid #f1f1f1;
-  }
+#login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
 
-  input[type=text],
-  input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-
-  button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-  }
-
-  button:hover {
-    opacity: 0.8;
-  }
-
-  .cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-  }
-
-  .imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-  }
-
-  img.avatar {
-    width: 40%;
-    border-radius: 50%;
-  }
-
-  .container {
-    padding: 16px;
-  }
-
-  span.password {
-    float: right;
-    padding-top: 16px;
-  }
+#login-form {
+  background: #24292e;
+  border-radius: 3px;
+  width: 70%;
+  display: grid
+}
 </style>
