@@ -32,7 +32,7 @@ module.exports = function(app) {
     res.renderVue("login", data, vue)
   });
 
-  app.get("/home", function(req, res) {
+  app.get("/dashboard", function(req, res) {
     const data = {
       content: "grades"
     };

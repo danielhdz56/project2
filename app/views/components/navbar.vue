@@ -14,8 +14,12 @@ export default {
         return {
             options: [
                 {
-                    href: '/',
-                    name: 'Home'
+                    href: 'Home',
+                    name: "Home"
+                },
+                {
+                    href: 'dashboard',
+                    name: 'Dashboard'
                 },
                 {
                     href: 'login',
@@ -33,7 +37,7 @@ export default {
 <style scoped>
 #main-nav {
     display: grid;
-    grid-template-columns: auto 200px;
+    grid-template-columns: auto 360px;
     grid-template-areas: ". nav";
     background:#24292e;
     padding: 5px 0;
