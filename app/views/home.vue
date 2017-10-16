@@ -13,6 +13,7 @@ import navbar from './components/navbar.vue';
 import sidenav from './components/sidenav.vue';
 import grades from "./components/grades.vue"
 import attendance from './components/attendance.vue';
+import roster from "./components/roster.vue"
 
 export default {
     data() {
@@ -26,7 +27,8 @@ export default {
         navbar,
         sidenav,
         grades,
-        attendance
+        attendance,
+        roster
     },
     methods: {
         changeContent(contentName) {
@@ -41,7 +43,7 @@ export default {
 <style scoped>
 #main-grid {
     display: grid;
-    grid-template-columns: minmax(100px, 8vw) 92vw;
+    grid-template-columns: minmax(100px, 8vw) minmax(auto, 92vw);
     grid-template-areas: "sidenav content";
     height: 100%;
     position: fixed;
@@ -56,7 +58,6 @@ export default {
     margin: 0.5% auto;
     width: 99%;
 }
-
 
 /* Table stuff*/
 
