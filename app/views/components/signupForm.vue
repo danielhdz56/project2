@@ -121,7 +121,7 @@ input[type=button] {
 }
 
 #firstname-container {
-  grid-column: 1/10;
+  grid-column: 1/11;
   grid-row: 2;
 }
 
@@ -131,7 +131,7 @@ input[type=button] {
 }
 
 #pass-container {
-  grid-column: 1/10;
+  grid-column: 1/11;
   grid-row: 3;
 }
 
@@ -141,7 +141,7 @@ input[type=button] {
 }
 
 #addr-container {
-  grid-column: 1/15;
+  grid-column: 1/16;
   grid-row: 4;
 }
 
