@@ -1,39 +1,27 @@
-<template lang="html">
-  <div>
-    <h2>Login Form</h2>
-    <form>
-      <div class="imgcontainer">
-        <img src="#" alt="Logo" class="logo">
+<template>
+  <div id="login-container">
+
+    <div id="login-form">
+      <h2 id="header">Sign in</h2>
+
+      <div id="username-container">
+        <label for="username">Username</label><br>
+        <input type="text" id="username">
       </div>
 
-      <div class="container">
-        <label>
-          <b>Username</b>
-        </label>
-        <input type="text" placeholder="Enter Username" name="username" required>
-
-        <label>
-          <b>Password</b>
-        </label>
-        <input type="password" placeholder="Enter Password" name="password" required>
-
-        <button type="submit">Login</button>
-        <input type="checkbox" checked="checked"> Remember me
+      <div id="password-container">
+        <label for="password">Password</label><br>
+        <input type="password" id="password">
       </div>
 
-      <div class="container" style="background-color:#f1f1f1">
-        <button type="button" class="cancelbtn">Cancel</button>
-        <span class="password">Forgot
-          <a href="#">password?</a>
-        </span>
-      </div>
-    </form>
+      <input type="button" value="Go">
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  data: function () {
+  data() {
     return {
     }
   }
@@ -41,56 +29,72 @@ export default {
 </script>
 
 <style>
-  form {
-    border: 3px solid #f1f1f1;
-  }
+body {
+  background: url("../assets/pictures/backdrop.jpeg");
+}
 
-  input[type=text],
-  input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
+label,
+button,
+#header {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
 
-  button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-  }
+input {
+  border: none;
+  margin: 5px 0;
+  border-radius: 2px;
+  padding: 5px 2px;
+  width: 100%;
+}
 
-  button:hover {
-    opacity: 0.8;
-  }
+input[type=button] {
+  grid-area: btn;
+  background: #bfb;
+  color: darkslategray;
+  font-size: x-large;
+}
 
-  .cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-  }
+#login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
 
-  .imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-  }
+#login-form {
+  background: rgba(41,45,50, 0.25);
+  border-radius: 3px;
+  padding: 30px;
+  width: 50%;
+  min-width: 600px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: "head head user user" "head head pass pass" "head head btn btn";
+}
 
-  img.avatar {
-    width: 40%;
-    border-radius: 50%;
-  }
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: head;
+  font-size: x-large;
+  border-right: 2px solid white;
+  margin-right: 30px;
+  font-weight: 600;
+  height: 240px;
+}
 
-  .container {
-    padding: 16px;
-  }
+#username-container {
+  grid-area: user;
+  width: 100%
+}
 
-  span.password {
-    float: right;
-    padding-top: 16px;
-  }
+#password-container {
+  grid-area: pass;
+  width: 100%;
+}
 </style>

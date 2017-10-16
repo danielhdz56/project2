@@ -1,96 +1,163 @@
-<template lang="html">
-<div>
-  <h2>Signup Form</h2>
+<template>
+  <div id="signup-container">
 
-  <form style="border:1px solid #ccc">
-    <div class="container">
-      <label>
-        <b>Email</b>
-      </label>
-      <input type="text" placeholder="Enter Email" name="email" required>
+    <div id="signup-form">
+      <h2 id="header">Sign up</h2>
 
-      <label>
-        <b>Password</b>
-      </label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-
-      <label>
-        <b>Repeat Password</b>
-      </label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-      <input type="checkbox" checked="checked"> Remember me
-      <p>By creating an account you agree to our
-        <a href="#">Terms & Privacy</a>.</p>
-
-      <div class="clearfix">
-        <button type="button" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn">Sign Up</button>
+      <div id="firstname-container">
+        <label for="firstname">First Name</label><br>
+        <input type="text" id="firstname">
       </div>
+
+      <div id="lastname-container">
+        <label for="lastname">Last Name</label><br>
+        <input type="text" id="lastname">
+      </div>
+
+      <div id="pass-container">
+        <label for="pass">Password</label><br>
+        <input type="password" id="pass">
+      </div>
+
+      <div id="cpass-container">
+        <label for="cpass">Confirm Password</label><br>
+        <input type="password" id="cpass">
+      </div>
+
+      <div id="addr-container">
+        <label for="addr">Address</label><br>
+        <input type="text" id="addr">
+      </div>
+
+      <div id="zip-container">
+        <label for="zip">Zip</label><br>
+        <input type="text" id="zip">
+      </div>
+
+      <div id="phone-container">
+        <label for="phone">Phone Number</label><br>
+        <input type="text" id="phone">
+      </div>
+
+      <div id="email-container">
+        <label for="email">Email</label><br>
+        <input type="text" id="email">
+      </div>
+
+      <input type="button" value="Submit">
     </div>
-  </form>
-</div>
+  </div>
 </template>
 
 <script>
 export default {
-  data: function () {
+  data() {
     return {
-      
+
     }
   }
 }
 </script>
 
 <style>
-  /* Full-width input fields */
-  input[type=text], input[type=password] {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-  }
+body {
+  background: url("../assets/pictures/backdrop.jpeg")
+}
 
-  /* Set a style for all buttons */
-  button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-  }
+label,
+button,
+#header {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  margin-bottom: 10px;
+  padding: 0 3px;
+}
 
-  /* Extra styles for the cancel button */
-  .cancelbtn {
-      padding: 14px 20px;
-      background-color: #f44336;
-  }
+input {
+  border: none;
+  margin: 5px 1px;
+  border-radius: 2px;
+  padding: 5px 2px;
+  width: 100%;
+}
 
-  /* Float cancel and signup buttons and add an equal width */
-  .cancelbtn,.signupbtn {
-      float: left;
-      width: 50%;
-  }
+input[type=button] {
+  grid-area: btn;
+  background: #bfb;
+  color: darkslategray;
+  font-size: x-large;
+  grid-row: 7;
+  grid-column: 8/16;
+}
 
-  /* Add padding to container elements */
-  .container {
-      padding: 16px;
-  }
+#header {
+  text-align: center;
+  font-size: x-large;
+  font-weight: 600;
+  border-bottom: 2px solid white;
+  padding-bottom: 10px;
+  grid-row: 1;
+  grid-column: span 21;
+}
 
-  /* Clear floats */
-  .clearfix::after {
-      content: "";
-      clear: both;
-      display: table;
-  }
+#signup-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
 
-  /* Change styles for cancel button and signup button on extra small screens */
-  @media screen and (max-width: 300px) {
-      .cancelbtn, .signupbtn {
-        width: 100%;
-      }
-  }
+#signup-form {
+  background: rgba(41, 45, 50, 0.25);
+  border-radius: 3px;
+  padding: 30px;
+  width: 50%;
+  min-width: 600px;
+  display: grid;
+  grid-template-columns: repeat(21, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+}
+
+#firstname-container {
+  grid-column: 1/11;
+  grid-row: 2;
+}
+
+#lastname-container {
+  grid-column: 12/22;
+  grid-row: 2;
+}
+
+#pass-container {
+  grid-column: 1/11;
+  grid-row: 3;
+}
+
+#cpass-container {
+  grid-column: 12/22;
+  grid-row: 3;
+}
+
+#addr-container {
+  grid-column: 1/16;
+  grid-row: 4;
+}
+
+#zip-container {
+  grid-column: 17/22;
+  grid-row: 4;
+}
+
+#phone-container {
+  grid-column: span 21;
+  grid-row: 5;
+}
+
+
+#email-container {
+  grid-column: span 21;
+  grid-row: 6;
+}
 </style>

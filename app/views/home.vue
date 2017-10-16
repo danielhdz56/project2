@@ -41,6 +41,10 @@ export default {
 </script>
 
 <style scoped>
+body {
+    background: url("assets/pictures/linen.png");
+}
+
 #main-grid {
     display: grid;
     grid-template-columns: minmax(100px, 8vw) minmax(auto, 92vw);
@@ -67,6 +71,7 @@ td {
     border-collapse: collapse;
     border: 1px solid #24292e;
     background: #fff;
+    font-family: sans-serif;
 }
 
 th {
@@ -82,5 +87,4 @@ td {
     vertical-align: middle;
     padding: 15px;
 }
-
 </style>
