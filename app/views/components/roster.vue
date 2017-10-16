@@ -14,8 +14,8 @@
         <tbody>
             <tr :key="student.id" v-for="student in students">
                 <td>{{student.id}}</td>
-                <td>{{student.lastName}}</td>
-                <td>{{student.firstName}}</td>
+                <td>{{student.lastname}}</td>
+                <td>{{student.firstname}}</td>
                 <td>{{student.sex}}</td>
                 <td>{{student.address}}</td>
                 <td>{{student.email}}</td>

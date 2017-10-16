@@ -63,8 +63,6 @@ body {
     width: 99%;
 }
 
-
-
 /* Table stuff*/
 
 table,
