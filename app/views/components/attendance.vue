@@ -15,12 +15,12 @@
         </thead>
 
         <tbody>
-            <tr :key="student.ID" v-for="student in students">
-                <td>{{student.ID}}</td>
-                <td>{{student.name}}</td>
-                <td>{{student.present}}</td>
-                <td>{{student.absent}}</td>
-                <td>{{student.tardy}}</td>
+            <tr :key="student.id" v-for="student in students">
+                <td>{{student.id}}</td>
+                <td>{{student.firstname}} {{student.lastname}}</td>
+                <td><div class="checkmark" v-if="student.att_codes[0].id === 1"></div></td>
+                <td><div class="checkmark" v-if="student.att_codes[0].id === 2"></div></td>
+                <td><div class="checkmark" v-if="student.att_codes[0].id === 3"></div></td>
             </tr>
         </tbody>
     </table>
@@ -31,26 +31,27 @@
 export default {
     data() {
         return {
-            students: [{
-                ID: "W0908254",
-                name: "David Wright",
-                present: 50000,
-                absent: 0,
-                tardy: -30
-            },
-            {
-                ID: "H3212543",
-                name: "Daniel Hernandez",
-                present: 0,
-                absent: 7000,
-                tardy: 80000000
-            }]
+            students: []
         }
+    },
+    created() {
+        this.$nextTick(function() {
+            axios.get('api/attendances').then((res) => {
+                this.students = res.data;
+            });
+        });
     }
 }
 </script>
 
 <style scoped>
-
+    .checkmark {
+        display:inline-block;
+        width: 3px;
+        height: 6px;
+        border: solid #000;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
 </style>
 

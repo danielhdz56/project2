@@ -19,7 +19,7 @@ export default {
     data() {
         return {
             content: "",
-            students: "studet",
+            students: "student",
             test: "123"
         }
     },
@@ -59,7 +59,6 @@ export default {
     width: 99%;
 }
 
-
 /* Table stuff*/
 
 table,
@@ -68,7 +67,6 @@ td {
     border-collapse: collapse;
     border: 1px solid #24292e;
     background: #fff;
-    font-family: sans-serif;
 }
 
 th {
@@ -84,4 +82,5 @@ td {
     vertical-align: middle;
     padding: 15px;
 }
+
 </style>
