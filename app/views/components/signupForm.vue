@@ -146,7 +146,7 @@ input[type=button] {
 }
 
 #zip-container {
-  grid-column: 17/21;
+  grid-column: 17/22;
   grid-row: 4;
 }
 
