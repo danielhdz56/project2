@@ -14,7 +14,7 @@
         <input type="password" id="password">
       </div>
 
-      <input type="button" value="Go">
+      <input type="button" value="Go" @click="showDash">
     </div>
   </div>
 </template>
@@ -23,6 +23,11 @@
 export default {
   data() {
     return {
+    }
+  },
+  methods: {
+    showDash() {
+      window.location = "/home"
     }
   }
 }
